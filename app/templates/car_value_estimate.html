@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Estimation</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+        table {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Car Value Estimator</h1>
+
+<form action="/estimate" method="POST" enctype="multipart/form-data">
+    <fieldset>
+
+    <div style="margin-top: 10px">
+        <label>Estimate: {{ estimate }}</label>
+    </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Vehicle</th>
+                <th>Location</th>
+                <th>Mileage</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.make }} {{ entry.model }}</td>
+                    <td>{{ entry.location }}</td>
+                    <td>{{ entry.mileage }}</td>
+                    <td>{{ entry.price }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <input type="submit" value="Estimate Again"/>
+    </fieldset>
+</form>
+
+</body>
+</html>

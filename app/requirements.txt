@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+requests
+requests-file
+urllib3
+redis
+mysql-connector-python
+python-dotenv
+redis
+numpy
+pandas
+scikit-learn
